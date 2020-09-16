@@ -7,15 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
-    private final GreetingService greetingService;
-
     @Autowired
-    public GreetingController(GreetingService greetingService) {
-        this.greetingService = greetingService;
-    }
+    private GreetingService greetingService;
+
 
     @GetMapping("/greet")
     public String greet() {
+
         return greetingService.sayHi();
     }
 
